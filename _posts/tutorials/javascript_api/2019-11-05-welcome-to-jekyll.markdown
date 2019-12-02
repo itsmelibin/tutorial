@@ -7,7 +7,11 @@ permalink: 'javascript_api'
 
 
 ## Introduction
-*Last Updated: 11/09/2019 JS Library Version: 3.1* 
+*Added various new features like iframe,codetab to documentation*
+
+*markdowns can be hosted in giihub*
+
+*Meun items are rendered dynamically*
 
 This tutorial is a detailed introduction to the [Maps API for JavaScript 3.1](https://developer.here.com/documentation/maps/topics/quick-start.html).
 
@@ -23,10 +27,7 @@ The Maps API for JavaScript was refreshed in 2019 to include some key new featur
 - rich interactions with the map - retrieve feature's meta information
 - introduction of APIKey as new authentication method
 
-In this tutorial, you will create a feature-rich isoline routing visualization application.
-
-![screenshot of final app](../../../assets/images/graphics/app.png)
- 
+In this tutorial, you will create a feature-rich isoline routing visualization application. 
 You'll learn how to:
 - set up an interactive map with controls and events.
 - integrate the [Isoline Routing API](https://developer.here.com/documentation/routing/topics/request-isoline.html) using the built-in JavaScript bindings to the HERE location service APIs.
@@ -38,9 +39,11 @@ You can view the [completed version of the application here](https://heremaps.gi
 
 Let's get started!
 
+## Adding images
+
 ![Sample Image](https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)
 
-## Download the template {#download-template}
+## Attaching files {#download-template}
 
 To get started with the tutorial, please download the template code:
 - [template code](./template.zip)
@@ -72,6 +75,8 @@ When you download and unzip the template, you'll see the following file structur
 
 You'll also want to start a local server during development.
 
+## Adding youtube videos
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/54J_ZCbeJdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 For example in Python 2.x, run the following command:
@@ -87,7 +92,7 @@ python -m http.server 8888
 
 You can then open your browser and view the app at [localhost:8888](localhost:8888).
 
-### Some notes on helper functions
+## Adding google charts
 
 <html>
     <head>
@@ -131,7 +136,7 @@ const $$ = qq => document.querySelectorAll(qq);
 
 These are just shorthand functions that reference the native DOM methods `querySelector()` and `querySelectorAll()` in order to help with readability of our code. They may remind you of [jQuery](https://stackoverflow.com/questions/10787342/why-does-jquery-have-dollar-signs-everywhere).
 
-## Initialize the platform and map {#initialize-map}
+## Adding Code tabs
 
 Let's get started by adding the Maps API for JavaScript imports.
 
@@ -214,8 +219,6 @@ In the code above, we've:
 
 If you save the file and refresh, you'll see a basic map up and running!
 
-## Add a draggable marker {#add-draggable-marker}
-
 We'll want to enable the user to pick a starting point of the isoline by either searching for a city location or by dragging and dropping a marker. Whenever a marker's location is changed, we'll want to recalculate the isoline. 
 
 Let's add a marker to the map and enable its position to be changed. Inside of `app.js`, paste the following code:
@@ -251,7 +254,7 @@ map.addEventListener('drag', evt => {
 }, false);
 ```
 
-
+## Adding JS fiddle
 
 <iframe width="100%" height="300" src="//jsfiddle.net/itsmelibin/0nah92p7/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
@@ -262,5 +265,7 @@ We'll create a new marker with the variable `marker` and add it to the map. Next
 - finally, on `dragend`, we'll want to recalculate the isoline. Later on, we'll introduce a function called `calculateIsoline()`, which will do just that.
 
 Go ahead and save the file and give it a try! Since the `calculateIsoline()` function doesn't yet exist, the map will give a small error. Try commenting the `calculateIsoline()` line temporarily to test out dragging the marker.
+
+## Adding codepen
 
 <iframe width="700" height="500" src="https://codepen.io/davidkpiano/pen/wMqXea" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
