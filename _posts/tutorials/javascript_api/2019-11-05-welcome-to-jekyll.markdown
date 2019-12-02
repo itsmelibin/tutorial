@@ -13,30 +13,6 @@ permalink: 'javascript_api'
 
 *Meun items are rendered dynamically*
 
-This tutorial is a detailed introduction to the [Maps API for JavaScript 3.1](https://developer.here.com/documentation/maps/topics/quick-start.html).
-
-The Maps API for JavaScript was refreshed in 2019 to include some key new features:
-- vector rendering
-- customization of the map's look and feel
-- runtime change of the map style
-- ability to hide/show base map data layers at the runtime
-- map tilting and rotation
-- extruded buildings
-- fractional zoom levels
-- interactive traffic flow information
-- rich interactions with the map - retrieve feature's meta information
-- introduction of APIKey as new authentication method
-
-In this tutorial, you will create a feature-rich isoline routing visualization application. 
-You'll learn how to:
-- set up an interactive map with controls and events.
-- integrate the [Isoline Routing API](https://developer.here.com/documentation/routing/topics/request-isoline.html) using the built-in JavaScript bindings to the HERE location service APIs.
-- dynamically change the isoline parameters and map style.
-- provide search suggestions using the HERE [Geocoding Autocomplete API](https://developer.here.com/documentation/geocoder-autocomplete/topics/quick-start-get-suggestions.html).
-- implement some slick CSS transitions.
-
-You can view the [completed version of the application here](https://heremaps.github.io/developer-blog/javascript-api-3.1/).
-
 Let's get started!
 
 ## Adding images
@@ -125,16 +101,6 @@ You can then open your browser and view the app at [localhost:8888](localhost:88
     </body>
   </html>
   
-The file `js/helpers.js` contains various helper functions like query selectors, date formatters, and label formatters.
-
-Throughout this tutorial, you will see the symbols `$` and `$$` a few times. These symbols are helper functions for querying the DOM.
-
-```javascript
-const $ = q => document.querySelector(q);
-const $$ = qq => document.querySelectorAll(qq);
-```
-
-These are just shorthand functions that reference the native DOM methods `querySelector()` and `querySelectorAll()` in order to help with readability of our code. They may remind you of [jQuery](https://stackoverflow.com/questions/10787342/why-does-jquery-have-dollar-signs-everywhere).
 
 ## Adding Code tabs
 
@@ -197,32 +163,6 @@ export { router, geocoder }
 
 {% endcodetabs %}
 
-
-Inside of `index.html` add the following script imports to your document's `<head>`:
-
-Next, we'll add our HERE platform credentials:
-
-Inside of `config.js`, edit the `hereCredentials` object to add your App Id, App Code, and API Key:
-
-You can find this information in the __Projects__ section of your Developer Portal account.
-
-Let's switch over to the file called `app.js`. This is where we will initialize the JavaScript map.
-
-Inside of `app.js`, paste the following code:
-
-In the code above, we've:
-
-- initialized the platform and basic interactive map.
-- added behavior controls and events. This way we can pan around the map. Try holding down either option (Mac) or alt (Windows) to have fun panning around the map in 3D!
-- initialize the router and geocoding service. We'll be using these later on in the tutorial.
-- added an event listener to the window to make sure the map resizes when the browser changes sizes.
-
-If you save the file and refresh, you'll see a basic map up and running!
-
-We'll want to enable the user to pick a starting point of the isoline by either searching for a city location or by dragging and dropping a marker. Whenever a marker's location is changed, we'll want to recalculate the isoline. 
-
-Let's add a marker to the map and enable its position to be changed. Inside of `app.js`, paste the following code:
-
 __app.js__
 ```javascript
 
@@ -257,14 +197,6 @@ map.addEventListener('drag', evt => {
 ## Adding JS fiddle
 
 <iframe width="100%" height="300" src="//jsfiddle.net/itsmelibin/0nah92p7/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
-
-We'll create a new marker with the variable `marker` and add it to the map. Next, we'll add some event listeners to the map. We'll listen to some events:
-- on `dragstart`, we'll want to disable the normal behavior so the marker can be dragged.
-- on `drag`, we'll want to update the marker's geometry to wherever it's being dragged.
-- finally, on `dragend`, we'll want to recalculate the isoline. Later on, we'll introduce a function called `calculateIsoline()`, which will do just that.
-
-Go ahead and save the file and give it a try! Since the `calculateIsoline()` function doesn't yet exist, the map will give a small error. Try commenting the `calculateIsoline()` line temporarily to test out dragging the marker.
 
 ## Adding codepen
 
