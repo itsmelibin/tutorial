@@ -19,7 +19,7 @@ Let's get started!
 
 ![Sample Image](https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)
 
-## Attaching files {#download-template}
+## Attaching files
 
 To get started with the tutorial, please download the template code:
 - [template code](./template.zip)
@@ -55,7 +55,7 @@ You'll also want to start a local server during development.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/54J_ZCbeJdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-For example in Python 2.x, run the following command:
+## Adding Code
 
 ```bash
 python -m SimpleHTTPServer 8888
