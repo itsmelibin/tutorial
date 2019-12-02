@@ -31,7 +31,7 @@
     var list = document.getElementsByTagName("H2");
     for (var eachMenu in list) {
         if (list.hasOwnProperty(eachMenu)) {
-            menu += '<a href="#'+ list[eachMenu].getAttribute("id") +'">' +   list[eachMenu].innerHTML + '</a><br/>';
+            menu += '<a href="#'+ list[eachMenu].getAttribute("id") +'">' +   list[eachMenu].innerHTML + '</a>';
         }
     }
     document.getElementById("side_menu").innerHTML=menu;
